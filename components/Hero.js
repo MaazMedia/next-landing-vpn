@@ -1,25 +1,79 @@
-import React, { useMemo } from "react";
-import Image from "next/image";
+"use client";
+import React, { useEffect, useMemo, useRef, useState } from "react";
+import Image from "next/legacy/image";
 import ButtonPrimary from "./misc/ButtonPrimary";
 import { motion } from "framer-motion";
 import getScrollAnimation from "../utils/getScrollAnimation";
 import ScrollAnimationWrapper from "./Layout/ScrollAnimationWrapper";
+import ButtonOutline from "./misc/ButtonOutline.";
+import Link from "next/link";
+import siteConfig from "../siteconfig";
 
+const AnimatedNumber = ({ targetNumber, suffix }) => {
+  const [number, setNumber] = useState(0);
+  const ref = useRef(null); // Create the ref for the element
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (ref.current) {
+        const elementTop = ref.current.getBoundingClientRect().top;
+        const isVisible = elementTop <= window.innerHeight && elementTop >= 0;
+
+        if (isVisible && number === 0) {
+          animateNumber();
+        }
+      }
+    };
+
+    const animateNumber = () => {
+      const duration = 3000; // Total duration of animation in milliseconds
+      const steps = 50; // Number of steps in the animation
+      const interval = duration / steps; // Time between each step
+      const stepValue = targetNumber / steps; // Increment value per step
+
+      let currentStep = 0;
+
+      const increment = () => {
+        setNumber((prev) => Math.min(prev + stepValue, targetNumber));
+        currentStep++;
+        if (currentStep < steps) {
+          setTimeout(increment, interval);
+        }
+      };
+
+      increment();
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [targetNumber, number]);
+
+  return (
+    <div ref={ref}>
+      {" "}
+      {/* Attach ref to the div element */}
+      <span>
+        {Math.floor(number)}
+        {suffix}
+      </span>
+    </div>
+  );
+};
 const Hero = ({
   listUser = [
     {
-      name: "Users",
-      number: "390",
+      name: "Assignments",
+      number: "8000",
       icon: "/assets/Icon/heroicons_sm-user.svg",
     },
     {
-      name: "Locations",
-      number: "20",
+      name: "Experience",
+      number: "8",
       icon: "/assets/Icon/gridicons_location.svg",
     },
     {
-      name: "Server",
-      number: "50",
+      name: "Courses",
+      number: "300",
       icon: "/assets/Icon/bx_bxs-server.svg",
     },
   ],
@@ -31,7 +85,7 @@ const Hero = ({
       {/* Hero Content */}
       <ScrollAnimationWrapper>
         <motion.div
-          className="grid grid-flow-row sm:grid-flow-col grid-rows-2 md:grid-rows-1 sm:grid-cols-2 gap-8 py-6 sm:py-16"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 py-6 sm:py-16"
           variants={scrollAnimation}
         >
           {/* Text Section */}
@@ -52,24 +106,23 @@ const Hero = ({
               </strong>
               , we are your trusted academic support partner.
             </p>
-            {/* Enhanced Get Started Button */}
-            {/* <ButtonPrimary
-              tooltipContent="Kickstart your academic journey"
-              variant="outline"
+            <Link
+              href={`https://wa.me/${
+                siteConfig.contact.phone.replaceAll(" ", "").split("+")[1]
+              }`}
             >
-              Get Started
-            </ButtonPrimary> */}
+              <ButtonOutline>Message Us Now</ButtonOutline>
+            </Link>
           </div>
           {/* Image Section */}
-          <div className="flex w-full">
+          <div className="w-full hidden md:block">
             <motion.div className="h-full w-full" variants={scrollAnimation}>
-              <Image
+              <img
                 src="/assets/Illustration1.png"
                 alt="VPN Illustration"
                 quality={100}
                 width={612}
                 height={383}
-                layout="responsive"
               />
             </motion.div>
           </div>
@@ -77,33 +130,38 @@ const Hero = ({
       </ScrollAnimationWrapper>
 
       {/* Stats Section */}
-      <div className="relative w-full flex">
-        <ScrollAnimationWrapper className="rounded-lg w-full grid grid-flow-row sm:grid-flow-row grid-cols-1 sm:grid-cols-3 py-9 divide-y-2 sm:divide-y-0 sm:divide-x-2 divide-gray-100 bg-white-500 z-10">
+      <div className="relative w-full flex flex-col sm:flex-row">
+        <ScrollAnimationWrapper className="rounded-lg w-full sm:w-11/12 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 py-9 sm:py-12 divide-y-2 sm:divide-y-0 sm:divide-x-2 divide-gray-100 bg-white z-10">
           {listUser.map((listUsers, index) => (
             <motion.div
-              className="flex items-center justify-start sm:justify-center py-4 sm:py-6 w-8/12 px-4 sm:w-auto mx-auto sm:mx-0"
+              className="flex items-center justify-start sm:justify-center py-6 w-10/12 sm:w-auto mx-auto sm:mx-0"
               key={index}
               custom={{ duration: 2 + index }}
               variants={scrollAnimation}
             >
-              <div className="flex mx-auto w-40 sm:w-auto">
-                <div className="flex items-center justify-center bg-green-100 w-12 h-12 mr-6 rounded-full">
-                  <img src={listUsers.icon} className="h-6 w-6" />
+              <div className="flex items-center justify-start sm:justify-center mx-auto w-full sm:w-auto">
+                <div className="flex items-center justify-center bg-green-100 w-16 h-16 sm:w-12 sm:h-12 mr-6 rounded-full shadow-lg">
+                  <img
+                    src={listUsers.icon}
+                    className="h-8 w-8 sm:h-6 sm:w-6"
+                    alt={listUsers.name}
+                  />
                 </div>
                 <div className="flex flex-col">
-                  <p className="text-xl text-black-600 font-bold">
-                    {listUsers.number}+
+                  <p className="text-2xl sm:text-xl text-black-600 font-bold">
+                    <AnimatedNumber
+                      targetNumber={listUsers.number}
+                      suffix="+"
+                    />
                   </p>
-                  <p className="text-lg text-black-500">{listUsers.name}</p>
+                  <p className="text-lg sm:text-base text-black-500">
+                    {listUsers.name}
+                  </p>
                 </div>
               </div>
             </motion.div>
           ))}
         </ScrollAnimationWrapper>
-        <div
-          className="absolute bg-black-600 opacity-5 w-11/12 rounded-lg h-64 sm:h-48 top-0 mt-8 mx-auto left-0 right-0"
-          style={{ filter: "blur(114px)" }}
-        ></div>
       </div>
     </div>
   );

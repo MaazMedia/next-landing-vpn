@@ -250,7 +250,7 @@
   resolved "https://registry.npmjs.org/@next/swc-linux-x64-musl/-/swc-linux-x64-musl-13.5.8.tgz"
   integrity sha512-NQICDU7X/tcAVkTEfvpkq5Z1EViodDj3m18wiyJ5wpzOFf4LH7vFjLBVCWNcf3/sfqv/yfD8jshqrffOPtZitg==
 
-"@nextui-org/accordion@2.2.7":
+"@nextui-org/accordion@^2.2.7", "@nextui-org/accordion@2.2.7":
   version "2.2.7"
   resolved "https://registry.npmjs.org/@nextui-org/accordion/-/accordion-2.2.7.tgz"
   integrity sha512-jdobOwUxSi617m+LpxHFzg64UhDuOfDJI2CMk3MP+b2WBJ7SNW4hmN2NW5Scx5JiY+kyBGmlxJ4Y++jZpZgQjQ==

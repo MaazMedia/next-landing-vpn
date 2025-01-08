@@ -1,40 +1,48 @@
-# [Tailwind VPN Landingpage](https://next-landing-vpn.vercel.app/) - Free Landingpage Template Apps
+Home Experience Assignment & Projects
+WhatsApp Number and contact link
 
-Tailwind VPN Landingpage is an open source, apps landing page template for [Tailwind CSS](https://tailwindcss.com/) and[ NextJS](nextjs.org/) coded by [Faldi](twitter.com/f2aldi) and design from [Didi](https://twitter.com/didiikurniawann).
+Home:
+Welcome to Project Tutor – Your Academic Success Partner
 
-![Landing Page](./landingpage.png)
+At Project Tutor, we empower university students to excel in their academic journey by providing expert guidance on assignments and projects. With 7 years of experience and a proven track record of completing over 8,000 assignments and projects for students across Kuwait, Qatar, Saudi Arabia, UAE, Bahrain, and the UK, we are your trusted academic support partner.
 
-## Getting Started
+WhatsApp Number: +44 7453 051899
+Contact Us: WhatsApp hyper link Button
 
-Choose one of the following options to get started:
+https://wa.me/447453051899
 
-- [Download the latest release](https://github.com/naufaldi/next-landing-vpn/archive/main.zip)
-- Clone the repo: `git clone https://github.com/naufaldi/next-landing-vpn.git`
-- Fork the repo
+Experience:
 
-## About the Template
+100% Reliable Service:
+We have 7 years of experience and have successfully completed over 8,000 assignments and projects for universities in Kuwait, Qatar, Saudi Arabia, the UAE, Bahrain, and UK.
 
-- Template building using NextJS Version 10
-- Tailwind v2.0
+We have assisted students in over 300 courses across the following fields:
 
-## Feature Template
+Business Courses: Business Analytics, Marketing, Finance, Economics, Strategic Management, Human Resource Management, International Business.
+Engineering Courses: Mechanical Engineering, Electrical Engineering, Civil Engineering, Chemical Engineering, Computer Engineering, Industrial Engineering, Biomedical Engineering.
+English Courses: Literature Studies, Creative Writing, Linguistics, Communication Studies, Journalism, Public Relations, Media Studies
+Math Courses: Applied Mathematics, Statistics, Data Science, Financial Mathematics, Cryptography, Econometrics, Operations Research, Computational Mathematics.
 
-- Using [NextJS Image](https://nextjs.org/docs/api-reference/next/image) for Image Optimization
-- Slider using [React Slick](https://react-slick.neostack.com/docs/api)
-- Smooth Scrolling and Active menu using [React Scroll](https://www.npmjs.com/package/react-scroll)
+What We Do: (no need to make button for this just let it come down below the experience section)
 
-## Bugs and Issues
+Assignment & Project Assistance: We guide students through their Course, helping them understand and complete their assignments with confidence.
 
-Have a bug or an issue with this template? [Open a new issue](https://github.com/naufaldi/next-landing-vpn/issues/new) here on GitHub.
+Step-by-Step Solutions: Our team breaks down tricky tasks into simple steps, making it easier to follow and learn.
 
-## Creator
+Video Explanations: We create clear and easy-to-understand video explanations to walk students through their assignments.
 
-[Tailwind VPN Landingpage](https://next-landing-vpn.vercel.app/) was coded and modified by and is maintained by **[me](https://github.com/naufaldi/)**, and dekstop design by [Didi Kurniawan](https://twitter.com/didiikurniawann)
+Assignment & Projects:
 
-## Copyright and License
+The can be linked with the Instagram where we can upload our recent projects,
 
-Code released under the MIT license.
+Instagram Link:
+https://www.instagram.com/project_tutor_/
 
-## To Do List Add Feature
+Blogs: (no need to make button for this just let it come down below the experience section)
 
-- [ ] Animation using Framer Motion
+In this section I will upload all the blogs, se we can improve the seo of the website , so keep this section us blog uploading part
+
+Phone:
+
+Footnote banner:
+@copyright etc must be there

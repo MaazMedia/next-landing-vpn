@@ -10,7 +10,7 @@ const ButtonPrimary = ({
 }) => {
   const baseClass =
     "py-3 lg:py-4 px-12 lg:px-16 font-semibold rounded-lg transition-all outline-none ";
-  const primaryClass = "text-white-500 bg-orange-500 hover:shadow-orange-md ";
+  const primaryClass = "text-white-500 bg-green-500 hover:shadow-green-md ";
   const outlineClass =
     "text-green-500 border-2 border-green-500 hover:bg-green-500 hover:text-white-500 ";
   const buttonClass =
